@@ -1,0 +1,44 @@
+{
+  "name": "professional-screen-recorder",
+  "version": "2.0.0",
+  "description": "مسجل الشاشة الاحترافي - Professional Screen Recorder Web App",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 8000",
+    "dev": "npx live-server --port=8000 --open=index.html",
+    "build": "echo 'No build process needed for this static app'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "screen-recorder",
+    "screenshot",
+    "web-app",
+    "arabic",
+    "rtl",
+    "screen-capture",
+    "video-recording"
+  ],
+  "author": "Team Mohaned",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/professional-screen-recorder"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/professional-screen-recorder/issues"
+  },
+  "homepage": "https://github.com/your-username/professional-screen-recorder#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "Chrome >= 72",
+    "Firefox >= 66",
+    "Safari >= 13",
+    "Edge >= 79"
+  ]
+}

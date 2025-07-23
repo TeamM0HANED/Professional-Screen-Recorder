@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسجل الشاشة الاحترافي | Professional Screen Recorder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-video"></i>
+                <h1>مسجل الشاشة الاحترافي</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="recording-controls">
+                    <button id="startRecording" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        <span>بدء التسجيل</span>
+                    </button>
+                    <button id="stopRecording" class="btn btn-danger" disabled>
+                        <i class="fas fa-stop"></i>
+                        <span>إيقاف التسجيل</span>
+                    </button>
+                    <button id="pauseRecording" class="btn btn-warning" disabled>
+                        <i class="fas fa-pause"></i>
+                        <span>إيقاف مؤقت</span>
+                    </button>
+                    <button id="takeScreenshot" class="btn btn-success">
+                        <i class="fas fa-camera"></i>
+                        <span>لقطة شاشة</span>
+                    </button>
+                </div>
+
+                <!-- Recording Options -->
+                <div class="recording-options">
+                    <div class="option-group">
+                        <label for="recordingSource">مصدر التسجيل:</label>
+                        <select id="recordingSource">
+                            <option value="screen">الشاشة الكاملة</option>
+                            <option value="window">نافذة محددة</option>
+                            <option value="tab">تبويب المتصفح</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="videoQuality">جودة الفيديو:</label>
+                        <select id="videoQuality">
+                            <option value="1080p">1080p (Full HD)</option>
+                            <option value="720p">720p (HD)</option>
+                            <option value="480p">480p (SD)</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                    <div class="option-group">
+                        <label for="autoDownload">تحميل تلقائي:</label>
+                        <input type="checkbox" id="autoDownload">
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <div class="preview-container">
+                    <video id="previewVideo" autoplay muted></video>
+                    <div class="preview-overlay">
+                        <div class="recording-status">
+                            <div id="recordingIndicator" class="recording-indicator">
+                                <i class="fas fa-circle"></i>
+                                <span>جاري التسجيل...</span>
+                            </div>
+                            <div id="recordingTimer" class="recording-timer">00:00:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recordings List -->
+            <div class="recordings-section">
+                <div class="recordings-header">
+                    <h2>التسجيلات المحفوظة</h2>
+                    <div class="recordings-controls">
+                        <div class="storage-info">
+                            <span id="storageUsage">0 تسجيل • 0 MB</span>
+                        </div>
+                        <button id="clearAllRecordings" class="btn btn-danger btn-small">
+                            <i class="fas fa-trash-alt"></i>
+                            حذف الكل
+                        </button>
+                    </div>
+                </div>
+                <div id="recordingsList" class="recordings-list">
+                    <div class="no-recordings">
+                        <i class="fas fa-folder-open"></i>
+                        <p>لا توجد تسجيلات محفوظة بعد</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 مسجل الشاشة الاحترافي - تم التطوير بواسطة Team Mohaned</p>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>الإعدادات</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label>تنسيق الفيديو:</label>
+                    <select id="videoFormat">
+                        <option value="webm">WebM</option>
+                        <option value="mp4">MP4</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>معدل الإطارات:</label>
+                    <select id="frameRate">
+                        <option value="30">30 FPS</option>
+                        <option value="60">60 FPS</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>خطأ</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="browser-check.js"></script>
+    <script src="storage-manager.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
